@@ -86,7 +86,28 @@ def main_func():
         cv2.destroyAllWindows()
 
 
+    return results
+
+
+def keypoint_ext(results, landmark="pose"):    
+    fin_arr = np.array([])
+    if landmark.lower() == "pose":
+        for res in results.pose_landmarks.landmark:
+            fin_arr = np.append(fin_arr, [res.x,res.y,res.z]).flatten()
+
+        return fin_arr
+
+    if landmark.lower() == "face":
+        for res in results.face_landmarks.landmark:
+            fin_arr = np.append(fin_arr, [res.x,res.y,res.z]).flatten()
+
+        return fin_arr
+
+
 
 
 if __name__ == "__main__":
-    main_func()
+    res = main_func()
+    arr_pose = keypoint_ext(res, "pose")
+    arr_face = keypoint_ext(res, "face")
+
