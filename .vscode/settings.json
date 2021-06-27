@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "C:\\Users\\Ankan\\AppData\\Local\\Programs\\Python\\Python36\\python.exe"
+    "python.pythonPath": "C:\\Users\\Ankan\\AppData\\Local\\Programs\\Python\\Python36\\python.exe",
+    "jupyter.jupyterServerType": "local"
 }
